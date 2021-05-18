@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         title: 'Universities List',
         home: Scaffold(
-          appBar: MyAppBar.myAppbar(search, () {
+          appBar: myAppbar(search, () {
             setState(() {
               search = !search;
             });
