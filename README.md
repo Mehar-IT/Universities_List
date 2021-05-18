@@ -1,16 +1,10 @@
-# university_list
+# universities_list
+Made By Hamza Tarique
 
-A new Flutter project.
+In this Application Universities of all over the world are listed with their webpages and you can find University by University name from the list
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+|                                                                         |                                                                         |
+|-------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| <img src="https://i.postimg.cc/W1H1f5MQ/screenshot-1.png" width="300"/> | <img src="https://i.postimg.cc/xCrT9qp5/screenshot-2.png" width="300"/> |
+| <img src="https://i.postimg.cc/5tQ2c8gj/screenshot-3.png" width="300"/> | <img src="https://i.postimg.cc/2yrkBMDB/screenshot-4.png" width="300"/> |
