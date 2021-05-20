@@ -38,7 +38,7 @@ class _UniversityListState extends State<UniversityList> {
                           height: 60,
                           alignment: Alignment.center,
                           child: Text(
-                            '${widget.university[index].alphaTwoCode}',
+                            '${index + 1} ${widget.university[index].alphaTwoCode}',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),

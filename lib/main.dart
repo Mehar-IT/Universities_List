@@ -1,8 +1,11 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
+
 import "package:flutter/material.dart";
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+
 import 'package:university_list/widgets/myAppBar.dart';
+
 import 'page/UniversityList.dart';
 import 'page/model/universityCatalog.dart';
 
@@ -37,19 +40,22 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Universities List',
-        home: Scaffold(
-          appBar: MyAppBar(
-            onchanged: onchanged,
-            state: () {
-              onchanged('');
-            },
-          ),
-          body: UniversityList(
-            university: university,
-          ),
-        ));
+      debugShowCheckedModeBanner: false,
+      title: 'Universities List',
+      home: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatAction(university: university),
+        appBar: MyAppBar(
+          onchanged: onchanged,
+          state: () {
+            onchanged('');
+          },
+        ),
+        body: UniversityList(
+          university: university,
+        ),
+      ),
+    );
   }
 
   void onchanged(dynamic query) {
@@ -66,5 +72,45 @@ class _MyAppState extends State<MyApp> {
         // (code.contains(searchLower);
       }).toList();
     });
+  }
+}
+
+class FloatAction extends StatelessWidget {
+  final List<University> university;
+  const FloatAction({
+    Key key,
+    @required this.university,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return university != null
+        ? Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 35),
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  gradient: LinearGradient(
+                      colors: [Colors.lightBlueAccent, Colors.cyan])),
+              child: ListTile(
+                leading: Text(
+                  'Total Universities',
+                  textScaleFactor: 1.5,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                trailing: Text(
+                  '${university.length}',
+                  textScaleFactor: 1.5,
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          )
+        : Stack();
+    // : Center(child: CircularProgressIndicator());
   }
 }
