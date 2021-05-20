@@ -23,12 +23,14 @@ class _MyAppBarState extends State<MyAppBar> {
           : Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                style: TextStyle(color: Colors.white),
                 onChanged: widget.onchanged,
                 decoration: InputDecoration(
                     border: UnderlineInputBorder(),
                     hintText: 'Enter University name',
+                    hintStyle: TextStyle(color: Colors.white),
                     labelText: 'Search',
-                    labelStyle: TextStyle(color: Colors.black)),
+                    labelStyle: TextStyle(color: Colors.white)),
               ),
             ),
       actions: [

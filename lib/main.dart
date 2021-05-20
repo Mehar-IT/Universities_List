@@ -54,13 +54,16 @@ class _MyAppState extends State<MyApp> {
 
   void onchanged(dynamic query) {
     setState(() {
-      university = data.where((element) {
-        final titleLower = element.name.toLowerCase();
-        final authorLower = element.country.toLowerCase();
+      university = data.where((university) {
+        final name = university.name.toLowerCase();
+        final country = university.country.toLowerCase();
+        final code = university.alphaTwoCode?.toLowerCase().toString();
         final searchLower = query.toLowerCase();
 
-        return titleLower.contains(searchLower) ||
-            authorLower.contains(searchLower);
+        return name.contains(searchLower) ||
+            code.contains(searchLower) ||
+            country.contains(searchLower);
+        // (code.contains(searchLower);
       }).toList();
     });
   }
