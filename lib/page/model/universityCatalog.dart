@@ -1,10 +1,12 @@
 class UniversityCatalog {
   List<University> university;
-  UniversityCatalog.fromJson(Map<String, dynamic> json) {
-    university = <University>[];
-    university = List.from(json['universities'])
-        .map((e) => University.fromJson(e))
-        .toList();
+
+  UniversityCatalog({this.university});
+  factory UniversityCatalog.fromJson(Map<String, dynamic> json) {
+    return UniversityCatalog(
+        university: List.from(json['universities'])
+            .map((e) => University.fromJson(e))
+            .toList());
   }
 }
 
@@ -15,11 +17,15 @@ class University {
   String name;
   String webPage;
 
-  University.fromJson(Map<String, dynamic> json) {
-    alphaTwoCode = json['alpha_two_code'];
-    country = json['country'];
-    domain = json['domain'];
-    name = json['name'];
-    webPage = json['web_page'];
+  University(
+      {this.alphaTwoCode, this.country, this.domain, this.name, this.webPage});
+
+  factory University.fromJson(Map<String, dynamic> json) {
+    return University(
+        alphaTwoCode: json['alpha_two_code'],
+        country: json['country'],
+        domain: json['domain'],
+        name: json['name'],
+        webPage: json['web_page']);
   }
 }

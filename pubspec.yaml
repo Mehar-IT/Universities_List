@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.3
+  # search_widget: ^1.0.2
   webview_flutter: ^2.0.4
 
 dev_dependencies:

@@ -1,37 +1,20 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:flutter/services.dart';
 import 'package:university_list/page/model/universityCatalog.dart';
-
 import 'webPage.dart';
 
 class UniversityList extends StatefulWidget {
+  final List<University> university;
+  UniversityList({this.university});
   @override
   _UniversityListState createState() => _UniversityListState();
 }
 
 class _UniversityListState extends State<UniversityList> {
-  List<University> university;
-  @override
-  void initState() {
-    super.initState();
-
-    fetchData();
-  }
-
-  void fetchData() async {
-    var json = await rootBundle.loadString('assets/universityJson.json');
-    var decoded = jsonDecode(json);
-    var obj = UniversityCatalog.fromJson(decoded);
-    university = obj.university;
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
-    return university != null
+    return widget.university != null
         ? ListView.builder(
-            itemCount: university.length,
+            itemCount: widget.university.length,
             itemBuilder: (context, index) => Card(
                   elevation: 10,
                   child: Row(
@@ -42,13 +25,15 @@ class _UniversityListState extends State<UniversityList> {
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.indigo,
+                          gradient: LinearGradient(
+                              colors: [Colors.cyan, Colors.indigo]),
                           shape: BoxShape.circle,
                         ),
                         width: 60,
                         height: 60,
                         alignment: Alignment.center,
                         child: Text(
-                          '${university[index].alphaTwoCode}',
+                          '${widget.university[index].alphaTwoCode}',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -61,12 +46,12 @@ class _UniversityListState extends State<UniversityList> {
                           children: [
                             SizedBox(height: 5),
                             Text(
-                              '${university[index].name}',
+                              '${widget.university[index].name}',
                               style: TextStyle(color: Colors.black),
                               textScaleFactor: 1.3,
                             ),
-                            Text('${university[index].country}'),
-                            Text('${university[index].domain}'),
+                            Text('${widget.university[index].country}'),
+                            Text('${widget.university[index].domain}'),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -76,10 +61,11 @@ class _UniversityListState extends State<UniversityList> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) => WebSite(
-                                                  uniname:
-                                                      university[index].name,
-                                                  website:
-                                                      university[index].webPage,
+                                                  uniname: widget
+                                                      .university[index].name,
+                                                  website: widget
+                                                      .university[index]
+                                                      .webPage,
                                                 )));
                                   },
                                   child: Container(
