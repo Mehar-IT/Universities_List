@@ -3,6 +3,8 @@ Made By Hamza Tarique
 
 In this Application Universities of all over the world are listed with their webpages and you can find University by University name from the list
 
+[Download link for Andriod](https://drive.google.com/file/d/18t1ChoBNKcHnBh6JZZ7P1IHHV_QTkTKR/view?usp=sharing)
+
 
 |                                                                         |                                                                         |
 |-------------------------------------------------------------------------|-------------------------------------------------------------------------|
