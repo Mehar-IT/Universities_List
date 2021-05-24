@@ -44266,6 +44266,20 @@
     {
         "alpha_two_code": "PK",
         "country": "Pakistan",
+        "domain": "gcuh.edu.pk",
+        "name": "Government College University Hyderabad",
+        "web_page": "https://www.gcuh.edu.pk/"
+    },
+    {
+        "alpha_two_code": "PK",
+        "country": "Pakistan",
+        "domain": "superior.edu.pk",
+        "name": "The Superior College",
+        "web_page": "http://www.superior.edu.pk/"
+    },
+    {
+        "alpha_two_code": "PK",
+        "country": "Pakistan",
         "domain": "superior.edu.pk",
         "name": "The Superior College",
         "web_page": "http://www.superior.edu.pk/"
